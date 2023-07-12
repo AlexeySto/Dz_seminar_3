@@ -9,26 +9,19 @@ int number = int.Parse(Console.ReadLine());
 
 int RungVal(int num, int rung)       // Определяет цифру разряда. num - число, rung номер разряда
 {
-    return num = num - num / (10 ** 2);
+    num = num % Convert.ToInt32(Math.Pow(10,rung));
+    int count =1;
+    while (count < rung)
+    {
+        num = num / 10;
+        count++;
+    }
+    return num;
 }
 
-int MinusDel(int n)      // Берем число по модулю
+if ( Math.Abs(number) > 9999 && Math.Abs(number) < 100000)
 {
-    if ( n < 0)
-    {
-        return n * -1;
-    }
-    else
-    {
-        return n;
-    }
-}
-
-int number1 = MinusDel(number);
-
-if ( number1 > 9999 && number1 < 10000)
-{
-    if (RungVal(number1,5) == RungVal(number1,1) && RungVal(number1,4) == RungVal(number1,2))
+    if (RungVal(number,5) == RungVal(number,1) && RungVal(number,4) == RungVal(number,2))
     {
         Console.WriteLine(number + " -> да");
     }
