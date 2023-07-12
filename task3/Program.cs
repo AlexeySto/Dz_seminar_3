@@ -5,3 +5,24 @@
 Console.Write("Введите целое число: ");
 int number = int.Parse(Console.ReadLine());
 
+int GetCube(int n)     // Возводим в квадрат
+{
+    return n * n * n;
+}
+
+if (number >= 0)
+{
+    Console.Write(number + " -> ");
+    int count = 1;
+    while (count < number)
+    {
+        Console.Write(GetCube(count) + ", ");
+        count++;
+    }
+
+    Console.WriteLine(GetCube(number) + ".");
+}
+else
+{
+    Console.WriteLine("Введено число меньше 0.");
+}
